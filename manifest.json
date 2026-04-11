@@ -1,6 +1,6 @@
 {
-  "name": "My Webview App",
-  "short_name": "Webview",
+  "name": "SeeSalam",
+  "short_name": "SeeSalam",
   "start_url": "index.html",
   "display": "standalone",
   "background_color": "#000000",
