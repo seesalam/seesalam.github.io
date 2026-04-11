@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>SeeSalam</title>
+    
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#000000">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+
+    <style>
+        /* Menghilangkan margin dan membuat layout fullscreen */
+        html, body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            width: 100%;
+            overflow: hidden; /* Mencegah double scrollbar */
+            background-color: #000;
+        }
+
+        /* Iframe memenuhi seluruh layar */
+        .webview-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="webview-container">
+        <iframe 
+            src="https://script.google.com/macros/s/AKfycbxY15wdTyAO_03NuuU0U7nUfHsG1FP1hQZFOMvBWCJ6WX9fY4ZJhBkPELO_mvuTupVNcg/exec" 
+            title="Webview"
+            allow="fullscreen">
+        </iframe>
+    </div>
+
+    <script>
+        // Mendaftarkan Service Worker agar memenuhi syarat PWA
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('sw.js')
+                    .then(reg => console.log('Service Worker terdaftar!', reg))
+                    .catch(err => console.log('Gagal daftar SW:', err));
+            });
+        }
+    </script>
+</body>
+</html>
