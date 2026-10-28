@@ -21,7 +21,7 @@ $('#a-go').onclick=async()=>{const err=$('#ae2'),u=$('#ru').value.trim().toLower
  else{const r=await api('login',{username:u,password:p});if(!r.success)throw new Error(r.message||'Login gagal');U=r.user;localStorage.setItem('asn_user',JSON.stringify(U));start()}}
  catch(e){err.textContent=e.message||'Gagal terhubung ke server'}
  $('#a-go').disabled=false};
-$('#out').onclick=()=>{localStorage.removeItem('asn_user');U=null;clearInterval(poll);clearInterval(listPoll);show()};
+$('#out').onclick=()=>{['asn_user','asn_pay','asn_tok'].forEach(k=>localStorage.removeItem(k));U=null;clearInterval(poll);clearInterval(listPoll);show()};
 function show(){$('#p-auth').hidden=!!U;$('#p-app').hidden=!U}
 
 /* ===== Mulai ===== */
