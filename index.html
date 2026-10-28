@@ -1,65 +1,30 @@
-<!DOCTYPE html>
-<html lang="id">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>SeeSalam</title>
-    
-    <link rel="manifest" href="manifest.json">
-    <link rel="icon" type="image/png" sizes="192x192" href="icon-192.png">
-    
-    <link rel="apple-touch-icon" href="icon-192.png">
-    
-    <meta name="theme-color" content="#000000">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="apple-mobile-web-app-capable" content="yes">
+---
+layout: default
+title: Kerja Cerdas untuk ASN
+---
+{% assign slot = site.early_total | minus: site.early_taken %}
+<div class="hero view"><div>
+<span class="pill eb">🔥 EARLY BIRD · <span data-slot>{{ slot }}</span> SLOT TERSISA</span>
+<h1 style="margin:14px 0">Lembur administrasi selesai, kerja nyata jalan terus.</h1>
+<p>Pernah merasa waktu habis hanya untuk merangkum laporan harian e-Kinerja, pusing menyusun KAK/RAB, dan lembur demi administrasi? Kamu tidak sendirian.</p>
+<p class="mut">Komunitas ASN nasional, tools premium, dan halaman portofolio pribadi. Puluhan tools akan terus bertambah, bahkan bisa kamu request.</p>
+<div class="row"><a class="btn amb" href="#harga">🚀 Amankan Slot Early Bird Rp25.000 Sekarang</a><button class="btn gh" data-act>Aktivasi Akun</button></div>
+<p class="small mut" style="margin-top:12px"><span class="live"></span>&nbsp; <b id="onl">128</b> ASN sedang aktif · Batalkan kapan saja tanpa ribet.</p></div>
+<div class="demo"><b>Micro-demo · 3 detik</b><div class="raw"><span id="ty"></span><span class="cursor"></span></div>
+<div class="out"><b>LAPORAN KINERJA HARIAN</b><br>Menyusun dan menyampaikan rekap data layanan administrasi sesuai target SKP.<br><small>✔ Siap cetak PDF dalam 1 klik</small></div></div></div>
 
-    <style>
-        /* Menghilangkan margin dan membuat layout fullscreen */
-        html, body {
-            margin: 0;
-            padding: 0;
-            height: 100%;
-            width: 100%;
-            overflow: hidden; /* Mencegah double scrollbar */
-            background-color: #000;
-        }
+<section><h2>Satu langganan, banyak solusi</h2><div class="grid g3" style="margin-top:14px">
+<div class="card"><h3>💬 Komunitas & Request</h3><p class="mut">Berbagi, bertanya, mengusulkan ide. Upvote terbanyak ditindaklanjuti developer.</p></div>
+<div class="card"><h3>🧰 App Vault</h3><p class="mut">Tools produktivitas ASN yang terus bertambah mengikuti kebutuhanmu.</p></div>
+<div class="card"><h3>🌐 Profil Portofolio</h3><p class="mut">Setiap anggota mendapat halaman profil web pribadi di <code>/u/namamu</code>.</p></div></div></section>
 
-        /* Iframe memenuhi seluruh layar */
-        .webview-container {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-        }
-
-        iframe {
-            width: 100%;
-            height: 100%;
-            border: none;
-        }
-    </style>
-</head>
-<body>
-
-    <div class="webview-container">
-        <iframe 
-            src="https://script.google.com/macros/s/AKfycbzihMZD4SPK54cANHvPGta8B5RWxJzTLjB-U6TrQM19zzDMvN1k6FWGq8YxgcU2PTJHOA/exec" 
-            title="SeeSalam"
-            allow="fullscreen">
-        </iframe>
-    </div>
-
-    <script>
-        // Mendaftarkan Service Worker agar memenuhi syarat PWA
-        if ('serviceWorker' in navigator) {
-            window.addEventListener('load', () => {
-                navigator.serviceWorker.register('sw.js')
-                    .then(reg => console.log('Service Worker terdaftar!', reg))
-                    .catch(err => console.log('Gagal daftar SW:', err));
-            });
-        }
-    </script>
-</body>
-</html>
+<section id="harga"><h2>Harga jujur, manfaat langsung terasa</h2>
+<p class="mut">Harga normal Rp{{ site.harga_normal | divided_by: 1000 }}.000, promo November Rp{{ site.harga_promo | divided_by: 1000 }}.000, dan 100 pendaftar pertama hanya Rp{{ site.harga_early | divided_by: 1000 }}.000.</p>
+<div class="grid g3" style="margin-top:16px">
+<div class="card price"><span class="pill">GRATIS</span><div class="big">Rp0</div><ul><li>Lihat feed komunitas</li><li>1× coba AI e-Kin</li></ul><a class="btn gh" href="/komunitas/">Coba Gratis</a></div>
+<div class="card price"><span class="pill">PROMO NOVEMBER</span><div class="big">Rp49.000<small>/bln</small></div><s>Rp89.000/bulan</s><ul><li>Akses penuh semua tools</li><li>Voting dan request tanpa batas</li></ul><button class="btn" data-act="49">Pilih Promo</button></div>
+<div class="card price hot lv2"><span class="pill eb">🔥 EARLY BIRD 100 PERTAMA</span><div class="big">Rp25.000<small>/bln</small></div>
+<div class="small"><b data-slot>{{ slot }}</b> slot tersisa</div><div class="bar2"><i data-fill style="width:{{ site.early_taken }}%"></i></div>
+<ul><li>Semua fitur Premium</li><li>Harga terkunci selama langganan aktif</li></ul><button class="btn amb" data-act="25">🚀 Amankan Slot Sekarang</button></div></div>
+<div class="card sc" style="margin-top:16px"><table><tr><th>Fitur</th><th>Gratis</th><th>Premium</th></tr><tr><td>Feed dan diskusi</td><td>Lihat</td><td>Posting, vote, request</td></tr><tr><td>AI e-Kin + PDF</td><td>1× coba</td><td>Kuota bulanan</td></tr><tr><td>Aksi Perubahan, Multiframe, Reminder</td><td>–</td><td>✔</td></tr><tr><td>Profil portofolio</td><td>–</td><td>✔</td></tr></table></div>
+<p class="small mut">🔒 Batalkan langganan kapan saja. Investasi kecil untuk membebaskan jam lembur setiap bulan.</p></section>

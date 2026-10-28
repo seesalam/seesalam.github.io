@@ -1,0 +1,26 @@
+title: ASN Andu
+description: Komunitas dan tools produktivitas untuk Aparatur Sipil Negara
+url: "https://asn.andu.my.id"
+baseurl: ""
+lang: id
+wa: "6281234567890"          # ganti dengan nomor admin
+gas_url: "https://script.google.com/macros/s/AKfycbxex-Zm7B8E41AWgTZLQbp-ZKJKsgPbZsES29j8tDkfkAFDaz_SULeCWeMxa9MxfDSS/exec"                  # URL Google Apps Script (opsional) untuk voting, request, waitlist
+early_total: 100
+early_taken: 0               # isi angka NYATA pendaftar early, jangan angka rekayasa
+harga_normal: 89000
+harga_promo: 49000
+harga_early: 25000
+plugins: [jekyll-seo-tag, jekyll-sitemap, jekyll-feed]
+collections:
+  profiles:
+    output: true
+    permalink: /u/:name/
+permalink: /blog/:title/
+exclude: [README.md, Gemfile, Gemfile.lock]
+defaults:
+  - scope: {path: "", type: posts}
+    values: {layout: post}
+  - scope: {path: "", type: profiles}
+    values: {layout: profile}
+# Backend akun, feed, dan chat: Google Apps Script milik Pesaner (dipakai ulang)
+pesaner_url: "https://script.google.com/macros/s/AKfycbyohmBDHfhqdb7Vc8GXp49q0MXzL8eI0LJSZ9eogoRQmHCqGU95bAEBxpPSUx9MhY02/exec"

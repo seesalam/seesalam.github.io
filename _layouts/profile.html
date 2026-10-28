@@ -1,0 +1,13 @@
+---
+layout: default
+---
+<section class="view">
+<div class="card lv2 prof">
+<div class="av">{{ page.title | slice: 0, 1 }}</div>
+<div><h1>{{ page.title }}</h1><p class="mut">{{ page.jabatan }} · {{ page.instansi }}</p>
+<p>{{ page.bio }}</p>
+{% for b in page.badges %}<span class="pill ok">🏅 {{ b }}</span> {% endfor %}</div></div>
+<h2 style="margin-top:28px">Portofolio</h2>
+<div class="grid g2" style="margin-top:12px">{% for p in page.portofolio %}<div class="card"><h3>{{ p.judul }}</h3><p class="mut small">Tahun {{ p.tahun }}</p></div>{% endfor %}</div>
+<p class="small mut" style="margin-top:20px">Halaman profil ini dibuat otomatis oleh Jekyll dari berkas di folder <code>_profiles</code>.</p>
+</section>

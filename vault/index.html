@@ -1,0 +1,8 @@
+---
+layout: default
+title: App Vault
+permalink: /vault/
+---
+<section class="view"><h2>App Vault</h2><p class="mut">Setiap tool dimuat saat dibuka agar tetap ringan di jaringan kantor.</p>
+<div class="grid g2" style="margin-top:16px">{% for t in site.data.tools %}<a class="card tile" href="{{ t.url }}" {% if t.premium %}data-premium{% endif %}><div class="em">{{ t.icon }}</div><h3>{{ t.title }}</h3><p class="small mut">{{ t.desc }}</p></a>{% endfor %}</div>
+<p id="segera" class="small mut" style="margin-top:20px">Tool bertanda gembok akan dibuka bertahap untuk member Premium.</p></section>

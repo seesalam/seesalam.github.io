@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#1e3a8a">
+<link rel="manifest" href="/manifest.webmanifest">
+<link rel="icon" href="/assets/icon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/app.css">
+{% seo %}
+<script>window.ASN={wa:"{{ site.wa }}",gas:"{{ site.gas_url }}",pesaner:"{{ site.pesaner_url }}",total:{{ site.early_total }},taken:{{ site.early_taken }}};try{var t=localStorage.th;if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+</head>
+<body data-page="{{ page.url }}">
+<div class="off" id="off">Kamu sedang offline. Draf tetap tersimpan di perangkat dan tersinkron saat sinyal kembali.</div>
+<header class="top"><div class="wrap bar">
+<a class="logo" href="/"><i>A</i>ASN Andu</a>
+<nav class="d">{% for n in site.data.nav %}<a href="{{ n.u }}" class="{% if page.url == n.u or n.u != '/' and page.url contains n.u %}on{% endif %}">{{ n.t }}</a>{% endfor %}</nav>
+<span class="sp"></span>
+<button class="ic" id="thm" aria-label="Ganti tema">🌓</button>
+<button class="ic" id="bell" aria-label="Aktifkan pengingat">🔔</button>
+</div></header>
+<main class="wrap">{{ content }}</main>
+<footer class="wrap foot"><p class="small mut">ASN Andu adalah inisiatif swasta independen, bukan aplikasi resmi instansi pemerintah atau BKN. Hasil AI wajib ditinjau pengguna sebelum diserahkan. <a href="/bantuan/#privasi">Privasi</a> · <a href="/bantuan/#syarat">Syarat & Ketentuan</a></p></footer>
+<div class="sticky" id="sticky"><a class="btn amb" href="/#harga">⚡ Berhenti Lembur, Mulai Bekerja Cerdas</a></div>
+<a class="wa" href="https://wa.me/{{ site.wa }}?text=Halo%20admin%20ASN%20Andu%2C%20saya%20butuh%20bantuan" target="_blank" rel="noopener" aria-label="Bantuan WhatsApp">💬</a>
+<nav class="dock">{% for n in site.data.nav limit:5 %}<a href="{{ n.u }}" class="{% if page.url == n.u or n.u != '/' and page.url contains n.u %}on{% endif %}"><b>{{ n.i }}</b>{{ n.t }}</a>{% endfor %}</nav>
+<div class="modal" id="mod"><div class="sheet" id="sheet"></div></div>
+<div class="toast" id="toast" role="status"></div>
+<script src="/assets/js/app.js" defer></script>
+<script src="/assets/js/asn-pay.js" defer></script>
+</body>
+</html>

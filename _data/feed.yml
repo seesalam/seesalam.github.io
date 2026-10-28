@@ -1,0 +1,4 @@
+- {id: p1, author: "Rina, Guru SD", cat: Request, votes: 34, text: "Butuh aplikasi yang membantu pekerjaan harian guru, format selalu berubah tiap tahun."}
+- {id: p2, author: "Budi, Staf Kecamatan", cat: Ide, votes: 27, text: "Usul generator notulen rapat dari catatan singkat."}
+- {id: p3, author: "Sari, Perawat Puskesmas", cat: Pertanyaan, votes: 21, text: "Bagaimana aturan terbaru penilaian kinerja untuk PPPK?"}
+- {id: p4, author: "Dedi, Humas Dinas", cat: Saran, votes: 15, text: "Pengingat deadline laporan sangat membantu, terima kasih tim."}

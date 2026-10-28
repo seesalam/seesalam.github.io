@@ -1,0 +1,5 @@
+- {id: ekin, icon: "📝", title: ASN Master – AI Laporan Kinerja, desc: "Susun laporan harian e-Kin dan ekspor PDF.", premium: false, url: /vault/ekin/}
+- {id: aksi, icon: "🧭", title: Kerangka Pikir Aksi Perubahan, desc: "Milestone dan logical framework untuk PKA/PKP.", premium: true, url: /vault/#segera}
+- {id: frame, icon: "🖼️", title: Multiframe Media Sosial, desc: "Bingkai postingan dengan logo instansi.", premium: true, url: /vault/#segera}
+- {id: remind, icon: "⏰", title: eKin Reminder, desc: "Pengingat deadline laporan dan kegiatan.", premium: true, url: /vault/#segera}
+- {id: next, icon: "✨", title: Tools baru menyusul, desc: "Bertambah mengikuti kebutuhanmu.", premium: true, url: /komunitas/#request}

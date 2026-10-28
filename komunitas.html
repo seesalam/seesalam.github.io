@@ -1,0 +1,42 @@
+---
+layout: default
+title: Komunitas
+permalink: /komunitas/
+---
+<section class="view"><h2>Komunitas ASN</h2>
+<p class="mut">Masuk dengan akun ASN Andu. Bagikan ide, kritik, dan saran, kirim pesan ke rekan, dan lihat request aplikasi. Postingan dengan like terbanyak ditindaklanjuti developer.</p>
+
+<div id="p-auth" class="card" style="max-width:440px;margin-top:16px">
+<div class="tabs" style="margin-top:0"><button class="on" data-auth="in">Masuk</button><button data-auth="up">Daftar</button></div>
+<div id="a-up" hidden><label for="rn">Nama lengkap</label><input id="rn" autocomplete="name"></div>
+<label for="ru">Username</label><input id="ru" autocomplete="username" placeholder="huruf kecil tanpa spasi">
+<label for="rp">Kata sandi</label><input id="rp" type="password" autocomplete="current-password" placeholder="minimal 6 karakter">
+<p class="small" id="ae2" style="color:#ba1a1a"></p>
+<button class="btn" id="a-go" style="margin-top:6px;width:100%">Masuk</button>
+<p class="small mut">Akun baru berstatus <b>Trial</b>: bisa berbagi ide, kritik, saran, chat, dan melihat request. Upgrade Premium untuk mengirim request aplikasi.</p></div>
+
+<div id="p-app" hidden>
+<div class="card row" style="justify-content:space-between;margin-top:16px"><div><b id="me-name"></b> <span class="small mut" id="me-user"></span> <span id="me-plan"></span></div><div class="row"><button class="btn sm gh" data-act="25" id="up-btn">Upgrade Premium</button><button class="btn sm gh" id="out">Keluar</button></div></div>
+<div class="tabs"><button class="on" data-ptab="feed">Feed</button><button data-ptab="req" id="request">Request Aplikasi</button><button data-ptab="chat">Chat <span id="unread" class="pill eb" hidden></span></button><button data-ptab="road">Roadmap</button></div>
+
+<div id="pt-feed">
+<div class="card"><label for="pc" style="margin-top:0">Bagikan ide, kritik, atau saran</label>
+<textarea id="pc" maxlength="260" placeholder="Tulis bebas di sini (maks 260 karakter)…"></textarea>
+<div class="row" style="margin-top:10px"><select id="pcat" style="width:auto"><option value="IDE">💡 Ide</option><option value="KRITIK">🧐 Kritik</option><option value="SARAN">🤝 Saran</option></select><button class="btn sm" id="psend">Kirim</button>
+<select id="psort" style="width:auto;margin-left:auto"><option value="new">Terbaru</option><option value="top">Terpopuler</option></select></div></div>
+<div class="grid" id="pfeed" style="margin-top:16px"></div></div>
+
+<div id="pt-req" hidden>
+<div class="card" id="req-box"></div>
+<div class="grid" id="preq" style="margin-top:16px"></div></div>
+
+<div id="pt-chat" hidden><div class="grid g2" style="align-items:start">
+<div class="card"><label for="cs" style="margin-top:0">Cari rekan ASN</label><input id="cs" placeholder="Nama atau username"><div id="cres"></div><h3 style="margin:14px 0 6px">Percakapan</h3><div id="clist"><p class="small mut">Memuat…</p></div></div>
+<div class="card" id="cthread"><p class="mut">Pilih percakapan atau cari rekan untuk mulai chat.</p></div></div></div>
+
+<div id="pt-road" hidden><div class="grid g3">
+<div class="col"><b>📌 Akan Dikerjakan</b>{% for i in site.data.roadmap.todo %}<div class="card">{{ i }}</div>{% endfor %}</div>
+<div class="col"><b>🔧 Sedang Dikerjakan</b>{% for i in site.data.roadmap.prog %}<div class="card">{{ i }}</div>{% endfor %}</div>
+<div class="col"><b>✅ Selesai</b>{% for i in site.data.roadmap.done %}<div class="card">{{ i }}</div>{% endfor %}</div></div></div>
+</div></section>
+<script src="/assets/js/pesaner.js" defer></script>

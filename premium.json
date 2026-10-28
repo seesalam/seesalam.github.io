@@ -1,0 +1,5 @@
+---
+layout: null
+permalink: /premium.json
+---
+{{ site.data.premium | jsonify }}

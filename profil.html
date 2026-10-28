@@ -1,0 +1,11 @@
+---
+layout: default
+title: Profil
+permalink: /profil/
+---
+<section class="view"><h2>Profil & Pengaturan</h2>
+<div class="card lv2" style="margin-top:12px"><h3 data-name>Belum terdaftar</h3><p class="mut" data-inst></p><p data-status><span class="pill">GRATIS</span></p><div class="row"><button class="btn amb sm" data-act="25" data-hide-premium>Aktivasi Premium</button><a class="btn gh sm" href="/u/rina-guru/">Lihat contoh profil publik</a></div></div>
+<div class="grid g2" style="margin-top:16px"><div class="card"><h3>💾 Cadangan Data</h3><p class="small mut">Unduh draf dan profil sebagai JSON, impor kembali di perangkat lain.</p><div class="row"><button class="btn sm" id="bkp">Unduh Backup</button><label class="btn sm gh" style="margin:0">Impor<input type="file" accept=".json" hidden id="imp"></label></div></div>
+<div class="card"><h3>🔐 Kunci Otomatis</h3><p class="small mut">Layar terkunci setelah 3 menit tanpa aktivitas.</p><input id="pin" inputmode="numeric" maxlength="4" placeholder="PIN 4 digit"><button class="btn sm" style="margin-top:10px" id="setpin">Simpan PIN</button></div>
+<div class="card"><h3>🌐 Daftarkan Profil Publik</h3><p class="small mut">Kirim data portofolio ke admin via WhatsApp. Admin membuat berkas di <code>_profiles</code> dan Jekyll menerbitkannya.</p><button class="btn sm gh" id="pubprof">Kirim Data Profil</button></div>
+<div class="card"><h3>🎁 Getok Tular</h3><p class="small mut">Ajak 1 rekan ASN, dapat bonus perpanjangan 1 minggu.</p><button class="btn sm gh" id="copyref">Salin Tautan Ajakan</button></div></div></section>

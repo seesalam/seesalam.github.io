@@ -1,0 +1,45 @@
+---
+layout: default
+title: Admin
+permalink: /admin/
+sitemap: false
+---
+<section class="view"><h2>Panel Superadmin</h2><p class="small mut">Hanya akun yang ada di <code>ADMIN_USERNAMES</code> (Properti Skrip) yang bisa mengakses.</p>
+<div id="ad-login" class="card" style="max-width:420px"><label for="au">Username</label><input id="au" autocomplete="username"><label for="ap">Kata sandi</label><input id="ap" type="password" autocomplete="current-password"><p class="small" id="aer" style="color:#ba1a1a"></p><button class="btn" id="ago" style="width:100%">Masuk</button></div>
+<div id="ad-app" hidden>
+<div class="grid g4" id="sum" style="margin-bottom:14px"></div>
+<div class="tabs"><button class="on" data-at="inv">Pembayaran</button><button data-at="mem">Member</button><button data-at="prof">Profil</button><button data-at="blog">Blog</button></div>
+<div id="at-inv"><div class="row"><select id="fst"><option value="CLAIMED">Sudah konfirmasi bayar</option><option value="PENDING">Belum konfirmasi</option><option value="APPROVED">Disetujui</option><option value="">Semua</option></select><input id="fq" placeholder="Cari kode / nama / nominal" style="flex:1"><button class="btn sm gh" id="fr">Muat ulang</button></div><div id="il" style="margin-top:12px"></div></div>
+<div id="at-mem" hidden><div class="row"><input id="mq" placeholder="Cari username / nama / instansi" style="flex:1"><button class="btn sm gh" id="mr">Cari</button></div><div id="ml" style="margin-top:12px"></div>
+<div class="card" style="margin-top:12px"><h3>Penyesuaian manual</h3><div class="row"><input id="xu" placeholder="username"><input id="xd" placeholder="± poin" inputmode="numeric"><input id="xr" placeholder="alasan" style="flex:1"><button class="btn sm" id="xp">Ubah poin</button></div><div class="row" style="margin-top:8px"><input id="yu" placeholder="username"><input id="yd" placeholder="± hari Premium" inputmode="numeric"><button class="btn sm" id="yp">Ubah masa aktif</button><button class="btn sm gh" id="sy">Sinkron premium ke GitHub</button></div></div></div>
+<div id="at-prof" hidden><div id="pl"></div></div>
+<div id="at-blog" hidden><div class="card"><h3>Terbitkan artikel Jekyll</h3><label for="bt">Judul</label><input id="bt"><label for="bg">Tag (pisah koma)</label><input id="bg" placeholder="e-kinerja, regulasi"><label for="bb">Isi (Markdown)</label><textarea id="bb" style="min-height:220px"></textarea><button class="btn" id="bp" style="margin-top:10px">Commit ke GitHub</button></div></div>
+</div></section>
+<script>
+(()=>{const $=s=>document.querySelector(s),G=ASN.gas,R=n=>'Rp'+Number(n).toLocaleString('id-ID'),esc=s=>String(s==null?'':s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+let T=null;try{T=JSON.parse(localStorage.asn_tok)}catch(e){}
+const call=async(a,d={})=>{const j=await fetch(G,{method:'POST',headers:{'Content-Type':'text/plain'},body:JSON.stringify({action:a,token:T&&T.token,...d})}).then(r=>r.json());if(j.code==='AUTH'){localStorage.removeItem('asn_tok');T=null;show()}if(!j.ok)throw new Error(j.message);return j};
+const msg=m=>alert(m);const dt=s=>s?new Date(s).toLocaleString('id-ID',{dateStyle:'short',timeStyle:'short'}):'-';
+function show(){const ok=T&&T.admin&&T.exp>Date.now();$('#ad-login').hidden=ok;$('#ad-app').hidden=!ok;if(ok)load()}
+$('#ago').onclick=async()=>{try{const j=await fetch(G,{method:'POST',headers:{'Content-Type':'text/plain'},body:JSON.stringify({action:'authLogin',username:$('#au').value,password:$('#ap').value})}).then(r=>r.json());if(!j.ok)throw new Error(j.message);if(!j.user.admin)throw new Error('Akun ini bukan superadmin.');T={token:j.token,exp:Date.now()+6.9*864e5,username:j.user.username,name:j.user.name,admin:true};localStorage.asn_tok=JSON.stringify(T);show()}catch(e){$('#aer').textContent=e.message}};
+document.querySelectorAll('[data-at]').forEach(b=>b.onclick=()=>{document.querySelectorAll('[data-at]').forEach(x=>x.classList.toggle('on',x===b));['inv','mem','prof','blog'].forEach(k=>$('#at-'+k).hidden=k!==b.dataset.at);if(b.dataset.at==='mem')mem();if(b.dataset.at==='prof')prof()});
+async function load(){try{const d=await call('adminDashboard');$('#sum').innerHTML=[['Perlu diverifikasi',d.counts.CLAIMED||0],['Member aktif',d.activeMembers],['Pendapatan bulan ini',R(d.revenueMonth)],['Poin beredar',R(d.pointsOutstanding)+' · kuota early sisa '+d.slots.left]].map(x=>`<div class="card"><span class="small mut">${x[0]}</span><h3>${x[1]}</h3></div>`).join('')}catch(e){}inv()}
+const badge=s=>({CLAIMED:'eb',APPROVED:'ok'}[s]||'');
+async function inv(){const j=await call('adminInvoices',{status:$('#fst').value,q:$('#fq').value});
+ $('#il').innerHTML=j.invoices.map(i=>`<div class="card" style="margin-bottom:10px"><div class="row" style="justify-content:space-between"><div><b>${esc(i.code)}</b> <span class="pill ${badge(i.status)}">${i.status}</span><br><span class="small">${esc(i.name)} @${esc(i.username)} · pengirim: ${esc(i.payerName||'-')}</span></div><div style="text-align:right"><div style="font-size:1.3em;font-weight:800">${R(i.total)}</div><span class="small mut">pokok ${R(i.baseNet)} + unik ${i.uniqueCode}${i.pointsUsed?' · poin '+R(i.pointsUsed):''}</span></div></div>
+ <p class="small mut" style="margin:6px 0">Dibuat ${dt(i.createdAt)} · konfirmasi ${dt(i.claimedAt)}${i.status==='APPROVED'?' · diterima '+R(i.receivedAmount)+' · poin +'+R(i.pointsAwarded):''}${i.adminNote?' · '+esc(i.adminNote):''}</p>
+ ${['APPROVED','REJECTED','CANCELLED'].includes(i.status)?'':`<div class="row"><input id="rc-${esc(i.code)}" value="${i.total}" inputmode="numeric" style="max-width:150px" aria-label="Nominal diterima"><label class="small"><input type="checkbox" id="fc-${esc(i.code)}" style="width:auto"> paksa</label><button class="btn sm amb" data-ap="${esc(i.code)}">Setujui</button><button class="btn sm gh" data-rj="${esc(i.code)}">Tolak</button></div>`}</div>`).join('')||'<p class="mut">Tidak ada data.</p>'}
+document.addEventListener('click',async e=>{const a=e.target.closest('[data-ap]'),r=e.target.closest('[data-rj]');
+ try{if(a){const c=a.dataset.ap,v=+$('#rc-'+c).value;if(!confirm('Setujui '+c+' dengan nominal diterima '+R(v)+'?'))return;const j=await call('adminApprove',{code:c,receivedAmount:v,force:$('#fc-'+c).checked});msg('Disetujui. Poin +'+R(j.invoice.pointsAwarded)+(j.github&&j.github.ok?'. GitHub tersinkron.':'. Sinkron GitHub: '+(j.github&&(j.github.reason||j.github.error)||'-')));load()}
+ if(r){const why=prompt('Alasan penolakan?','Pembayaran tidak ditemukan di mutasi');if(why===null)return;await call('adminReject',{code:r.dataset.rj,reason:why});load()}}catch(x){msg(x.message)}});
+$('#fst').onchange=inv;$('#fr').onclick=load;$('#fq').onkeydown=e=>{if(e.key==='Enter')inv()};
+async function mem(){const j=await call('adminMembers',{q:$('#mq').value});$('#ml').innerHTML=j.members.map(m=>`<div class="card" style="margin-bottom:8px"><b>${esc(m.name)}</b> @${esc(m.username)} <span class="pill ${m.active?'ok':''}">${m.active?'AKTIF':'NONAKTIF'}</span>${m.earlyMember?' <span class="pill eb">PELOPOR</span>':''}<br><span class="small mut">${esc(m.instansi)} · NIP ${esc(m.nip)} · sampai ${dt(m.premiumUntil)} · poin ${R(m.points)}</span></div>`).join('')||'<p class="mut">Belum ada member.</p>'}
+$('#mr').onclick=mem;
+$('#xp').onclick=async()=>{try{const j=await call('adminAdjustPoints',{username:$('#xu').value,delta:$('#xd').value,reason:$('#xr').value});msg('Saldo poin: '+R(j.points));mem()}catch(e){msg(e.message)}};
+$('#yp').onclick=async()=>{try{await call('adminSetPremium',{username:$('#yu').value,days:$('#yd').value});msg('Masa aktif diperbarui');mem()}catch(e){msg(e.message)}};
+$('#sy').onclick=async()=>{try{await call('adminSyncPremium');msg('premium.yml dikirim ke GitHub')}catch(e){msg(e.message)}};
+async function prof(){const j=await call('adminProfiles');$('#pl').innerHTML=j.profiles.map(p=>`<div class="card" style="margin-bottom:8px"><b>${esc(p.data.title)}</b> @${esc(p.username)} <span class="pill ${p.status==='PUBLISHED'?'ok':'eb'}">${p.status}</span><p class="small">${esc(p.data.jabatan)} · ${esc(p.data.instansi)}<br>${esc(p.data.bio)}</p><button class="btn sm" data-pp="${esc(p.username)}">${p.status==='PUBLISHED'?'Perbarui':'Terbitkan'} ke Jekyll</button></div>`).join('')||'<p class="mut">Belum ada profil masuk.</p>'}
+document.addEventListener('click',async e=>{const b=e.target.closest('[data-pp]');if(!b)return;try{const j=await call('adminPublishProfile',{username:b.dataset.pp});msg('Dikirim ke GitHub. Tayang di '+j.url+' setelah build selesai.');prof()}catch(x){msg(x.message)}});
+$('#bp').onclick=async()=>{try{const j=await call('adminPublishPost',{title:$('#bt').value,tags:$('#bg').value,body:$('#bb').value});msg('Artikel dikirim: '+j.github.path)}catch(e){msg(e.message)}};
+show()})();
+</script>

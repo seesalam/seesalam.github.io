@@ -1,0 +1,6 @@
+- {t: Beranda, u: /, i: "🏠"}
+- {t: Dasbor, u: /dashboard/, i: "📊"}
+- {t: Komunitas, u: /komunitas/, i: "💬"}
+- {t: App Vault, u: /vault/, i: "🧰"}
+- {t: Blog, u: /blog/, i: "📰"}
+- {t: Profil, u: /profil/, i: "👤"}
