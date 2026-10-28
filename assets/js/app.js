@@ -58,5 +58,10 @@ let idle;const bump=()=>{clearTimeout(idle);if(S.pin)idle=setTimeout(()=>{$('#sh
 ['click','keydown','touchstart'].forEach(e=>addEventListener(e,bump,{passive:true}));
 /* Mengetik demo & penghitung */
 const ty=$('#ty');if(ty){const t='rapat koordinasi, rekap data layanan, input surat masuk';let i=0;setInterval(()=>{ty.textContent=t.slice(0,i++%(t.length+12))},90);setInterval(()=>{$('#onl').textContent=120+Math.floor(Math.random()*30)},4000)}
-get('state').then(s=>{if(s)S={...S,...s};try{const p=JSON.parse(localStorage.asn_pay||'null');if(p){S.premium=!!p.premium&&new Date(p.until)>new Date();if(p.nama&&!S.nama)S.nama=p.nama}else if(A.gas){S.premium=false}}catch(e){}paint();feed();myreq();bump()});
+get('state').then(async s=>{if(s)S={...S,...s};const was=S.premium;S.premium=false;
+try{const p=JSON.parse(localStorage.asn_pay||'null');if(p&&p.premium&&new Date(p.until)>new Date())S.premium=true;if(p&&p.nama&&!S.nama)S.nama=p.nama}catch(e){}
+paint();feed();myreq();bump();
+try{const U=JSON.parse(localStorage.asn_user||'null');if(U){S.nama=U.name||U.username||S.nama;let P=[];try{P=await (await fetch(A.gas?A.gas+'?action=premium':'/premium.json',{cache:'no-cache'})).json()}catch(e){try{P=await (await fetch('/premium.json',{cache:'no-cache'})).json()}catch(x){}}
+if(U.role==='admin'||(Array.isArray(P)&&P.includes(U.username)))S.premium=true}}catch(e){}
+if(S.premium&&!was){S.kuota=Math.max(S.kuota,10)}await set('state',S);paint();feed()});
 })();
