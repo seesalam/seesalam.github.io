@@ -4,8 +4,10 @@ title: AI Laporan e-Kin
 permalink: /vault/ekin/
 ---
 <section class="view"><a href="/vault/" class="small">← Kembali ke Vault</a><h2 style="margin:8px 0">📝 ASN Master: AI Laporan Kinerja</h2>
-<div class="card"><p class="small mut">3 langkah: 1) tulis catatan mentah · 2) klik Susun Laporan · 3) cetak atau simpan PDF.</p>
+<div class="card"><p class="small mut">3 langkah: 1) tulis catatan mentah · 2) pilih mode lalu klik Susun Laporan · 3) cetak atau simpan PDF.</p>
 <label for="rw">Catatan kerja mentah (tersimpan otomatis di perangkatmu)</label><textarea id="rw" placeholder="Contoh: rapat koordinasi, rekap data layanan, input surat masuk"></textarea>
 <div class="row" style="margin-top:12px"><button class="btn" id="gen">✨ Susun Laporan</button><button class="btn gh" onclick="window.print()">🖨️ Cetak / Simpan PDF</button></div>
 <p class="small mut" style="margin-top:10px">⚠ Hasil AI wajib ditinjau dan disesuaikan sebelum diserahkan ke atasan atau diunggah ke sistem resmi instansi.</p></div>
+<div id="modebox"></div>
 <div class="doc" id="out"><span style="color:#64748b">Hasil laporan tampil di sini.</span></div></section>
+<script src="/assets/js/ai-cloud.js" defer></script>

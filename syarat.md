@@ -39,6 +39,9 @@ Kamu bertanggung jawab atas konten yang kamu kirim. Kamu memberi kami izin menam
 ## Hasil AI dan tools
 Hasil tools, termasuk AI, hanyalah draf bantu. Kamu wajib meninjau dan memastikan kebenarannya sebelum menyerahkan ke atasan atau mengunggah ke sistem resmi. Tools tidak menggantikan peraturan dan petunjuk resmi instansimu.
 
+## AI cloud dan kuota
+Fitur AI cloud bersifat opsional dan memakai layanan pihak ketiga yang dapat berubah, terbatas, atau tidak tersedia sewaktu-waktu. Pemakaian dibatasi per akun per hari dan per bulan, serta ada batas harian keseluruhan layanan. Anggota yang belum Premium mendapat satu percobaan gratis. Kuota dapat diubah tanpa pemberitahuan, dan mode template tetap tersedia sebagai cadangan.
+
 ## Batas tanggung jawab
 Layanan disediakan apa adanya. Sejauh diizinkan hukum, kami tidak bertanggung jawab atas kerugian tidak langsung akibat penggunaan layanan, termasuk kesalahan isi dokumen yang kamu serahkan.
 

@@ -12,11 +12,11 @@ const cache=s=>{try{localStorage.asn_pay=JSON.stringify({premium:s.premium,until
 const M=h=>{$('#sheet').innerHTML=h;$('#mod').classList.add('open')},X=()=>{$('#mod').classList.remove('open');clearInterval(poll);clearInterval(tick)};
 let qrLib;const lib=()=>qrLib||(qrLib=new Promise((ok,no)=>{const s=document.createElement('script');s.src='https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js';s.onload=ok;s.onerror=no;document.head.appendChild(s)}));
 
-function login(){let u='';try{u=JSON.parse(localStorage.asn_user).username}catch(e){}
+function login(after){let u='';try{u=JSON.parse(localStorage.asn_user).username}catch(e){}
  M(`<h3>Masuk dulu</h3><p class="small mut">Gunakan akun komunitas (Pesaner) yang sama. Kata sandi tidak disimpan di perangkat.</p><label for="lu">Username</label><input id="lu" value="${esc(u)}" autocomplete="username"><label for="lp2">Kata sandi</label><input id="lp2" type="password" autocomplete="current-password"><p class="small" id="le" style="color:#ba1a1a"></p><div class="row" style="margin-top:10px"><button class="btn" id="lg">Masuk</button><button class="btn gh" id="lx">Batal</button></div><p class="small mut">Belum punya akun? Daftar di <a href="/komunitas/">Komunitas</a>.</p>`);
  $('#lx').onclick=X;$('#lg').onclick=async()=>{$('#lg').disabled=true;$('#le').textContent='';
   try{const j=await fetch(G,{method:'POST',headers:{'Content-Type':'text/plain'},body:JSON.stringify({action:'authLogin',username:$('#lu').value,password:$('#lp2').value})}).then(r=>r.json());
-   if(!j.ok)throw new Error(j.message);tok={token:j.token,exp:Date.now()+6.9*864e5,username:j.user.username,name:j.user.name,admin:j.user.admin};localStorage.asn_tok=JSON.stringify(tok);if(!localStorage.asn_user)localStorage.asn_user=JSON.stringify({username:j.user.username,name:j.user.name});cache(j.status);open()}
+   if(!j.ok)throw new Error(j.message);tok={token:j.token,exp:Date.now()+6.9*864e5,username:j.user.username,name:j.user.name,admin:j.user.admin};localStorage.asn_tok=JSON.stringify(tok);if(!localStorage.asn_user)localStorage.asn_user=JSON.stringify({username:j.user.username,name:j.user.name});cache(j.status);(after||open)()}
   catch(e){$('#le').textContent=e.message||'Gagal terhubung';$('#lg').disabled=false}}}
 
 async function open(){
@@ -65,5 +65,5 @@ function waiting(v){
 
 /* ambil alih tombol aktivasi lama (fase tangkap) */
 document.addEventListener('click',e=>{if(e.target.closest('[data-act]')||e.target.closest('.tile.locked')){e.preventDefault();e.stopImmediatePropagation();open()}},true);
-window.ASNPay={open,call,getTok:()=>tok,setTok:t=>{tok=t;localStorage.asn_tok=JSON.stringify(t)}};
+window.ASNPay={open,call,ensure:()=>new Promise(r=>{if(loggedIn())return r(true);login(()=>{X();r(true)})}),getTok:()=>tok,setTok:t=>{tok=t;localStorage.asn_tok=JSON.stringify(t)}};
 })();

@@ -28,9 +28,12 @@
 - cat: Fitur
   q: Apakah hasil AI boleh langsung diserahkan?
   a: Tidak. Hasil AI hanyalah draf. Tinjau dan sesuaikan dengan fakta kerjamu serta format instansi sebelum diserahkan atau diunggah ke sistem resmi.
+- cat: Fitur
+  q: Apa bedanya mode Template dan AI cloud di e-Kin?
+  a: Template otomatis berjalan di perangkatmu dan bukan AI, jadi tidak ada data yang dikirim. AI cloud menyusun kalimat lebih luwes, tetapi teks catatanmu dikirim ke penyedia AI pihak ketiga setelah kamu menyetujuinya. Pemakaian AI cloud dibatasi per hari dan per bulan.
 - cat: Privasi
   q: Di mana data saya disimpan?
-  a: Draf dan pengaturan disimpan di browser perangkatmu. Data akun komunitas dikelola layanan Pesaner. Data aktivasi (nama, instansi, NIP, catatan pembayaran) disimpan di Google Sheet milik pengelola. Rinciannya ada di Kebijakan Privasi.
+  a: Draf dan pengaturan disimpan di browser perangkatmu. Teks hanya keluar dari perangkat bila kamu memilih mode AI cloud. Data akun komunitas dikelola layanan Pesaner. Data aktivasi (nama, instansi, NIP, catatan pembayaran) disimpan di Google Sheet milik pengelola. Rinciannya ada di Kebijakan Privasi.
 - cat: Privasi
   q: Apakah ASN Andu aplikasi resmi pemerintah?
   a: Bukan. ASN Andu adalah inisiatif swasta independen dan tidak berafiliasi dengan instansi pemerintah atau BKN.
