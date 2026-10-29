@@ -16,3 +16,6 @@ Halaman `/komunitas/` memakai backend Apps Script Pesaner (`pesaner_url` di `_co
 
 ## Backend pembayaran (Code.gs)
 Lihat `README_BACKEND.md`. Isi `gas_url` di `_config.yml` dengan URL web app Code.gs. Panel admin: `/admin/`.
+
+## Desain v3 (Karier Abdi Modern)
+Halaman baru: `/harga/`, `/privasi/`, `/syarat/`, `/keamanan/`, 8 halaman tool di `/vault/*` (status "segera"), Pusat Bantuan dengan pencarian, katalog Vault dengan filter. Data katalog ada di `_data/tools.yml`, FAQ di `_data/faq.yml`. Perilaku halaman di `assets/js/site.js`. Kuota Pelopor tampil dari backend (`?action=slots`), bukan angka rekayasa.

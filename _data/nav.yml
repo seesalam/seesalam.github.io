@@ -2,5 +2,7 @@
 - {t: Dasbor, u: /dashboard/, i: "📊"}
 - {t: Komunitas, u: /komunitas/, i: "💬"}
 - {t: App Vault, u: /vault/, i: "🧰"}
-- {t: Blog, u: /blog/, i: "📰"}
 - {t: Profil, u: /profil/, i: "👤"}
+- {t: Harga, u: /harga/, i: "🏷️"}
+- {t: Bantuan, u: /bantuan/, i: "🛟"}
+- {t: Blog, u: /blog/, i: "📰"}

@@ -1,0 +1,36 @@
+- cat: Langganan
+  q: Apa saja yang saya dapat dengan Premium?
+  a: Akses semua tools di App Vault yang sudah dirilis, hak posting request aplikasi dan voting di Komunitas, serta halaman profil portofolio publik di /u/namamu. Tools baru ditambahkan bertahap.
+- cat: Langganan
+  q: Berapa lama masa aktif, dan bagaimana perpanjangannya?
+  a: Setiap pembayaran yang disetujui memberi masa aktif 30 hari. Jika diperpanjang sebelum habis, sisa hari tetap dihitung. Anggota harga Pelopor tetap mempertahankan harga kuncinya bila memperpanjang paling lambat 7 hari setelah masa aktif habis.
+- cat: Langganan
+  q: Apa yang terjadi saat masa aktif habis?
+  a: Akses tools Premium dikunci sampai kamu memperpanjang. Draf dan data di perangkatmu tidak dihapus.
+- cat: Pembayaran
+  q: Bagaimana cara membayar?
+  a: Buka halaman Harga atau Profil, klik Aktivasi Premium, isi data, lalu buat tagihan. Kamu mendapat kode tagihan dan QRIS dengan nominal tepat. Scan dengan e-wallet atau m-banking, lalu tekan Saya sudah bayar.
+- cat: Pembayaran
+  q: Apa itu kode unik di belakang nominal?
+  a: Tiga digit terakhir nominal (1–499) adalah kode unik agar admin bisa mencocokkan pembayaranmu dengan mutasi. Kode unik tidak hilang. Setelah pembayaran diverifikasi, jumlahnya masuk sebagai poin di akunmu.
+- cat: Pembayaran
+  q: Apa gunanya poin?
+  a: 1 poin bernilai Rp1 dan bisa dipakai sebagai potongan pada tagihan berikutnya. Poin berasal dari kode unik atau kelebihan transfer yang sudah diverifikasi.
+- cat: Pembayaran
+  q: Kenapa pembayaran saya belum aktif?
+  a: Pembayaran diverifikasi manual oleh admin dengan mencocokkan nominal dan kode tagihan. Pastikan kamu sudah menekan Saya sudah bayar dan nominal yang ditransfer sama persis. Jika lama, hubungi admin lewat WhatsApp dengan menyebut kode tagihanmu.
+- cat: Pembayaran
+  q: Salah nominal atau transfer ganda, bagaimana?
+  a: Hubungi admin dengan bukti transfer dan kode tagihan. Kelebihan transfer yang sudah diverifikasi dicatat sebagai poin. Lihat ketentuan lengkap di Syarat & Ketentuan.
+- cat: Fitur
+  q: Bagaimana cara request fitur baru?
+  a: Masuk ke Komunitas, buka tab Request Aplikasi, lalu kirim idemu. Request dengan dukungan terbanyak diprioritaskan. Developer menyaring dan mengerjakan secara bertahap, jadi tidak semua request dijamin dibuat.
+- cat: Fitur
+  q: Apakah hasil AI boleh langsung diserahkan?
+  a: Tidak. Hasil AI hanyalah draf. Tinjau dan sesuaikan dengan fakta kerjamu serta format instansi sebelum diserahkan atau diunggah ke sistem resmi.
+- cat: Privasi
+  q: Di mana data saya disimpan?
+  a: Draf dan pengaturan disimpan di browser perangkatmu. Data akun komunitas dikelola layanan Pesaner. Data aktivasi (nama, instansi, NIP, catatan pembayaran) disimpan di Google Sheet milik pengelola. Rinciannya ada di Kebijakan Privasi.
+- cat: Privasi
+  q: Apakah ASN Andu aplikasi resmi pemerintah?
+  a: Bukan. ASN Andu adalah inisiatif swasta independen dan tidak berafiliasi dengan instansi pemerintah atau BKN.

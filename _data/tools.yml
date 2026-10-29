@@ -1,5 +1,10 @@
-- {id: ekin, icon: "📝", title: ASN Master – AI Laporan Kinerja, desc: "Susun laporan harian e-Kin dan ekspor PDF.", premium: false, url: /vault/ekin/}
-- {id: aksi, icon: "🧭", title: Kerangka Pikir Aksi Perubahan, desc: "Milestone dan logical framework untuk PKA/PKP.", premium: true, url: /vault/#segera}
-- {id: frame, icon: "🖼️", title: Multiframe Media Sosial, desc: "Bingkai postingan dengan logo instansi.", premium: true, url: /vault/#segera}
-- {id: remind, icon: "⏰", title: eKin Reminder, desc: "Pengingat deadline laporan dan kegiatan.", premium: true, url: /vault/#segera}
-- {id: next, icon: "✨", title: Tools baru menyusul, desc: "Bertambah mengikuti kebutuhanmu.", premium: true, url: /komunitas/#request}
+- {id: ekin, icon: "📝", cat: Kinerja, status: tersedia, premium: false, url: /vault/ekin/, title: "ASN Master – AI Laporan Kinerja", desc: "Susun laporan harian e-Kin dan ekspor PDF."}
+- {id: remind, icon: "⏰", cat: Kinerja, status: segera, premium: true, url: /vault/remind/, title: "eKin Reminder", desc: "Pengingat deadline laporan dan kegiatan."}
+- {id: aksi, icon: "🧭", cat: Karier, status: segera, premium: true, url: /vault/aksi/, title: "Kerangka Pikir Aksi Perubahan", desc: "Milestone dan logical framework untuk PKA/PKP."}
+- {id: pangkat, icon: "📈", cat: Karier, status: segera, premium: true, url: /vault/pangkat/, title: "Simulasi Angka Kredit", desc: "Perkirakan capaian angka kredit untuk kenaikan pangkat."}
+- {id: porto, icon: "🌐", cat: Karier, status: segera, premium: true, url: /vault/porto/, title: "Pembuat Portofolio Mandiri", desc: "Susun halaman portofolio publik berbasis Jekyll."}
+- {id: kakrab, icon: "🧮", cat: Dokumen, status: segera, premium: true, url: /vault/kakrab/, title: "Penyusun KAK & RAB", desc: "Kerangka acuan kerja dan rencana anggaran biaya."}
+- {id: nota, icon: "📄", cat: Dokumen, status: segera, premium: true, url: /vault/nota/, title: "Format Tata Naskah Dinas", desc: "Nota dinas dan surat dengan format yang rapi."}
+- {id: abk, icon: "📊", cat: Dokumen, status: segera, premium: true, url: /vault/abk/, title: "Analisis Beban Kerja", desc: "Bantu menyusun ABK dan peta jabatan."}
+- {id: frame, icon: "🖼️", cat: Publikasi, status: segera, premium: true, url: /vault/frame/, title: "Multiframe Media Sosial", desc: "Bingkai postingan dengan logo instansi."}
+- {id: next, icon: "✨", cat: Publikasi, status: request, premium: true, url: /komunitas/#request, title: "Tools baru menyusul", desc: "Bertambah mengikuti kebutuhanmu. Usulkan lewat Request."}

@@ -1,0 +1,1 @@
+<div class="faq" id="faq">{% assign n = 0 %}{% for f in site.data.faq %}{% if include.limit == nil or n < include.limit %}{% assign n = n | plus: 1 %}<details data-cat="{{ f.cat }}"><summary>{{ f.q }}</summary><p>{{ f.a }}</p></details>{% endif %}{% endfor %}</div>

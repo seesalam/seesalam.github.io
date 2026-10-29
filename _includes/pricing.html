@@ -1,0 +1,10 @@
+{% assign slot = site.early_total | minus: site.early_taken %}{% assign pct = site.early_taken | times: 100 | divided_by: site.early_total %}
+<div class="grid g3">
+<div class="card price"><span class="pill">GRATIS</span><div class="big">Rp0</div><span class="small mut">Untuk mencoba</span>
+<ul class="ticks"><li>Lihat feed komunitas</li><li>Chat dengan rekan ASN</li><li>1× coba AI e-Kin</li></ul><a class="btn gh" href="/komunitas/">Coba Gratis</a></div>
+<div class="card price"><span class="pill eb">PROMO LAUNCHING</span><div class="big">Rp{{ site.harga_promo | divided_by: 1000 }}.000<small>/bln</small></div><s>Harga normal Rp{{ site.harga_normal | divided_by: 1000 }}.000/bulan</s>
+<ul class="ticks"><li>Semua tools yang sudah rilis</li><li>Voting dan request tanpa batas</li><li>Profil portofolio publik</li></ul><button class="btn" data-act="49">Pilih Promo</button></div>
+<div class="card price hot lv2"><span class="pill eb">🔥 HARGA PELOPOR · 100 PERTAMA</span><div class="big">Rp{{ site.harga_early | divided_by: 1000 }}.000<small>/bln</small></div>
+<div class="small"><b data-slot>{{ slot }}</b> dari {{ site.early_total }} slot tersisa</div><div class="bar2"><i data-fill style="width:{{ pct }}%"></i></div>
+<ul class="ticks"><li>Semua fitur Premium</li><li>Harga terkunci selama langganan aktif</li><li>Lencana ASN Pelopor</li></ul><button class="btn amb" data-act="25">🚀 Amankan Slot Sekarang</button></div></div>
+<p class="small mut" style="margin-top:12px">Promo Rp{{ site.harga_promo | divided_by: 1000 }}.000 berlaku sampai 30 November 2026, setelah itu harga normal. Kuota Pelopor dihitung dari pembayaran yang sudah diverifikasi.</p>

@@ -8,5 +8,7 @@ permalink: /dashboard/
 <div class="card lv2"><span class="small mut">Sisa kuota AI bulan ini</span><h1 data-kuota>3</h1><div class="bar2"><i data-kbar style="width:30%"></i></div></div>
 <div class="card"><span class="small mut">Deadline terdekat (eKin Reminder)</span><h3 style="margin-top:6px">Laporan akhir bulan</h3><p data-deadline></p><button class="btn sm gh" id="remind">🔔 Ingatkan saya</button></div>
 <div class="card"><span class="small mut">Status langganan</span><p data-status><span class="pill">GRATIS</span></p><button class="btn amb sm" data-act="25" data-hide-premium>Upgrade</button></div></div>
+<h3 style="margin:28px 0 12px">Mulai di sini</h3>
+<div class="grid g3"><a class="card tile" href="/vault/ekin/"><b>1 · Coba AI e-Kin</b><p class="small mut" style="margin:4px 0 0">Ubah catatan kasar jadi draf laporan.</p></a><a class="card tile" href="/komunitas/"><b>2 · Sapa komunitas</b><p class="small mut" style="margin:4px 0 0">Berbagi ide atau tanya rekan ASN.</p></a><a class="card tile" href="/profil/"><b>3 · Lengkapi profil</b><p class="small mut" style="margin:4px 0 0">Siapkan data untuk halaman portofolio.</p></a></div>
 <h3 style="margin:28px 0 12px">Peluncur Cepat</h3><div class="grid g4">
-{% for t in site.data.tools %}<a class="card tile" href="{{ t.url }}" {% if t.premium %}data-premium{% endif %}><div class="em">{{ t.icon }}</div><h3>{{ t.title }}</h3><p class="small mut">{{ t.desc }}</p></a>{% endfor %}</div></section>
+{% for t in site.data.tools %}<a class="card tile" href="{{ t.url }}" {% if t.premium %}data-premium{% endif %}><div class="top"><div class="em">{{ t.icon }}</div><span class="st {{ t.status }}">{{ t.status }}</span></div><h3>{{ t.title }}</h3><p class="small mut">{{ t.desc }}</p></a>{% endfor %}</div></section>

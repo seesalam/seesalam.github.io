@@ -3,10 +3,13 @@ layout: default
 title: Pusat Bantuan
 permalink: /bantuan/
 ---
-<section class="view"><h2>Pusat Bantuan</h2><div class="grid g2" style="margin-top:16px">
-<div class="card"><h3>Cara pakai AI e-Kin</h3><p class="mut">Buka App Vault, tulis catatan, klik Susun Laporan, lalu cetak atau simpan PDF.</p></div>
-<div class="card"><h3>Cara request fitur baru</h3><p class="mut">Buka Komunitas, pilih tab Request, kirim idemu. Upvote terbanyak dikerjakan lebih dulu.</p></div>
-<div class="card"><h3>Masa tenggang</h3><p class="mut">Setelah langganan habis, akses tetap terbuka 3–5 hari sebelum dikunci.</p></div>
-<div class="card"><h3>Pembaruan format</h3><p class="mut">Template e-Kin diperbarui berkala mengikuti regulasi BKN dan instansi.</p></div>
-<div class="card" id="privasi"><h3>Kebijakan Privasi</h3><p class="mut">Draf dan data profil disimpan di perangkatmu (IndexedDB). Data tidak diperjualbelikan atau dipakai melatih model publik. Komunikasi ke server memakai HTTPS. Analitik hanya data anonim fitur terpopuler.</p></div>
-<div class="card" id="syarat"><h3>Syarat & Ketentuan</h3><p class="mut">ASN Andu adalah inisiatif swasta independen, bukan aplikasi resmi instansi atau BKN. Satu akun untuk satu ASN terverifikasi. Dilarang menyalin, mendekompilasi, atau menjual ulang akses. Hasil AI wajib ditinjau pengguna. Hak cipta kode dan aset milik pengembang.</p></div></div></section>
+<section class="view"><div class="sec-h" style="margin-bottom:14px"><span class="eyebrow blue">Pusat bantuan</span><h1 style="margin:10px 0 8px;font-size:32px">Ada yang bisa kami bantu?</h1><div class="search" style="margin:12px auto 0"><input id="hq" type="search" placeholder="Cari pertanyaan, mis. pembayaran, poin, privasi" aria-label="Cari bantuan"></div></div>
+<div class="helpcats"><button class="card on" data-hc="Semua" style="text-align:center"><b>📚 Semua</b></button><button class="card" data-hc="Langganan"><b>⭐ Langganan</b></button><button class="card" data-hc="Pembayaran"><b>💳 Pembayaran</b></button><button class="card" data-hc="Fitur"><b>🧰 Fitur</b></button><button class="card" data-hc="Privasi"><b>🔒 Privasi</b></button></div>
+<div style="margin-top:20px">{% include faq.html %}<p id="hnone" class="mut" hidden>Tidak ada hasil. Tanyakan langsung lewat formulir di bawah.</p></div>
+<div class="grid g2" style="margin-top:28px;align-items:start" id="kontak">
+<div class="card lv2"><h3>Butuh bantuan langsung?</h3><p class="small mut">Isi formulir, lalu pesan tersusun otomatis dan dibuka di WhatsApp ke admin.</p>
+<form id="hform"><label for="hk">Kategori</label><select id="hk"><option>Pembayaran</option><option>Akun &amp; login</option><option>Fitur &amp; tools</option><option>Lainnya</option></select>
+<label for="hn">Nama</label><input id="hn" autocomplete="name"><label for="hc">Kode tagihan (jika ada)</label><input id="hc" placeholder="ASN-261028-XXXX"><label for="hd">Uraian masalah</label><textarea id="hd" maxlength="500"></textarea>
+<button class="btn" style="margin-top:12px;width:100%">Kirim via WhatsApp</button></form></div>
+<div class="card"><h3>Dokumen penting</h3><div class="row" style="flex-direction:column;align-items:stretch;gap:6px;margin-top:8px"><a class="btn gh sm" href="/privasi/">🔒 Kebijakan Privasi</a><a class="btn gh sm" href="/syarat/">📜 Syarat &amp; Ketentuan</a><a class="btn gh sm" href="/keamanan/">🛡️ Keamanan Data</a></div>
+<p class="small mut" style="margin-top:12px">Admin menjawab secara manual, sehingga waktu respons bergantung jam kerja.</p></div></div></section>

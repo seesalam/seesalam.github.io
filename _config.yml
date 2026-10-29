@@ -3,7 +3,7 @@ description: Komunitas dan tools produktivitas untuk Aparatur Sipil Negara
 url: "https://asn.andu.my.id"
 baseurl: ""
 lang: id
-wa: "6281234567890"          # ganti dengan nomor admin
+wa: "6288976501065"          # ganti dengan nomor admin
 gas_url: "https://script.google.com/macros/s/AKfycbxex-Zm7B8E41AWgTZLQbp-ZKJKsgPbZsES29j8tDkfkAFDaz_SULeCWeMxa9MxfDSS/exec"                  # URL Google Apps Script (opsional) untuk voting, request, waitlist
 early_total: 100
 early_taken: 0               # isi angka NYATA pendaftar early, jangan angka rekayasa

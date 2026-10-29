@@ -3,6 +3,11 @@ layout: default
 title: App Vault
 permalink: /vault/
 ---
-<section class="view"><h2>App Vault</h2><p class="mut">Setiap tool dimuat saat dibuka agar tetap ringan di jaringan kantor.</p>
-<div class="grid g2" style="margin-top:16px">{% for t in site.data.tools %}<a class="card tile" href="{{ t.url }}" {% if t.premium %}data-premium{% endif %}><div class="em">{{ t.icon }}</div><h3>{{ t.title }}</h3><p class="small mut">{{ t.desc }}</p></a>{% endfor %}</div>
-<p id="segera" class="small mut" style="margin-top:20px">Tool bertanda gembok akan dibuka bertahap untuk member Premium.</p></section>
+<section class="view"><span class="eyebrow">Katalog</span><h1 style="margin:10px 0 6px;font-size:32px">App Vault</h1>
+<p class="mut" style="max-width:60ch">Tools produktivitas ASN. Setiap tool dimuat saat dibuka agar tetap ringan di jaringan kantor.</p>
+<div class="row" style="margin-top:14px"><div class="search" style="flex:1"><input id="vq" type="search" placeholder="Cari tool, mis. laporan, KAK, portofolio" aria-label="Cari tool"></div></div>
+<div class="chips"><button class="on" data-vc="Semua">Semua</button><button data-vc="Kinerja">Kinerja</button><button data-vc="Karier">Karier</button><button data-vc="Dokumen">Dokumen</button><button data-vc="Publikasi">Publikasi</button></div>
+<div class="grid g3" id="vgrid">{% for t in site.data.tools %}<a class="card tile" data-cat="{{ t.cat }}" href="{{ t.url }}" {% if t.premium %}data-premium{% endif %}><div class="top"><div class="em">{{ t.icon }}</div><span class="st {{ t.status }}">{% if t.status == 'request' %}usulan{% else %}{{ t.status }}{% endif %}</span></div><h3 style="margin-top:6px">{{ t.title }}</h3><p class="small mut">{{ t.desc }}</p><span class="small mut">{{ t.cat }}</span></a>{% endfor %}</div>
+<p id="vnone" class="mut" hidden>Tidak ada tool yang cocok. Coba kata kunci lain atau <a href="/komunitas/#request">usulkan tool baru</a>.</p>
+<div class="card lv2" style="margin-top:24px"><h3>Tool yang kamu butuhkan belum ada?</h3><p class="mut">Ajukan di Komunitas. Request dengan dukungan terbanyak diprioritaskan.</p><a class="btn amb" href="/komunitas/#request">Ajukan Request</a></div>
+<p id="segera" class="small mut" style="margin-top:16px">Tool bertanda gembok terbuka untuk anggota Premium setelah dirilis. Status “segera” berarti belum rilis dan tanpa janji tanggal.</p></section>

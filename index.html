@@ -2,29 +2,54 @@
 layout: default
 title: Kerja Cerdas untuk ASN
 ---
-{% assign slot = site.early_total | minus: site.early_taken %}
 <div class="hero view"><div>
-<span class="pill eb">🔥 EARLY BIRD · <span data-slot>{{ slot }}</span> SLOT TERSISA</span>
-<h1 style="margin:14px 0">Lembur administrasi selesai, kerja nyata jalan terus.</h1>
-<p>Pernah merasa waktu habis hanya untuk merangkum laporan harian e-Kinerja, pusing menyusun KAK/RAB, dan lembur demi administrasi? Kamu tidak sendirian.</p>
-<p class="mut">Komunitas ASN nasional, tools premium, dan halaman portofolio pribadi. Puluhan tools akan terus bertambah, bahkan bisa kamu request.</p>
-<div class="row"><a class="btn amb" href="#harga">🚀 Amankan Slot Early Bird Rp25.000 Sekarang</a><button class="btn gh" data-act>Aktivasi Akun</button></div>
-<p class="small mut" style="margin-top:12px"><span class="live"></span>&nbsp; <b id="onl">128</b> ASN sedang aktif · Batalkan kapan saja tanpa ribet.</p></div>
-<div class="demo"><b>Micro-demo · 3 detik</b><div class="raw"><span id="ty"></span><span class="cursor"></span></div>
-<div class="out"><b>LAPORAN KINERJA HARIAN</b><br>Menyusun dan menyampaikan rekap data layanan administrasi sesuai target SKP.<br><small>✔ Siap cetak PDF dalam 1 klik</small></div></div></div>
+<span class="eyebrow warn">⚠ Refleksi nyata ASN</span>
+<h1 class="hx" style="margin:14px 0 6px">Capek ngetik draf SKP &amp; KAK sampai malam?</h1>
+<p class="hx" style="font-size:26px;color:var(--amb);margin:0 0 14px"><em style="color:inherit">Pusing format nota dinas bolak-balik?</em></p>
+<p class="lead">Kamu tidak sendirian. Banyak ASN menghabiskan berjam-jam untuk mengetik ulang, merapikan format, dan mengejar tenggat e-Kinerja. ASN Andu hadir agar waktu itu kembali ke pekerjaan nyata.</p>
+<div class="grid g2" style="margin:18px 0">
+<div class="card" style="padding:14px"><b>📄 Revisi karena format</b><p class="small mut" style="margin:4px 0 0">Kop, nomor, dan tata letak naskah yang dikembalikan atasan.</p></div>
+<div class="card" style="padding:14px"><b>⏳ Tenggat e-Kinerja</b><p class="small mut" style="margin:4px 0 0">Menyusun narasi laporan harian dan bulanan di akhir periode.</p></div></div>
+<div class="row"><a class="btn amb" href="/harga/">🚀 Amankan Slot Harga Pelopor</a><a class="btn gh" href="/vault/">Jelajahi App Vault</a></div>
+<p class="row" style="margin-top:14px"><span class="eyebrow amb">⚡ Tersisa <span data-slot>{{ site.early_total | minus: site.early_taken }}</span> slot Pelopor</span><span class="small mut">Batalkan kapan saja. Tanpa kontrak.</span></p></div>
+<div class="card lv2 mirror"><div class="hd"><b>🪞 Cermin Rutinitas</b><span class="eyebrow blue">Realita vs Solusi</span></div>
+<div class="cols"><div class="old"><b>❌ CARA LAMA</b><ul><li>Mengetik ulang laporan tiap hari</li><li>Format surat berbeda-beda</li><li>Menunda sampai mepet tenggat</li><li>Membawa pekerjaan ke rumah</li></ul></div>
+<div class="new"><b>✨ DENGAN ASN ANDU</b><ul><li>Catatan kasar jadi draf rapi</li><li>Template format yang konsisten</li><li>Pengingat deadline</li><li>Waktu kembali untuk hal penting</li></ul></div></div>
+<div class="hd" style="border-top:1px solid var(--bd);border-bottom:0"><span class="small">🔒 Draf disimpan di perangkatmu</span><b class="small" style="color:var(--sec)">Privat</b></div></div></div>
 
-<section><h2>Satu langganan, banyak solusi</h2><div class="grid g3" style="margin-top:14px">
-<div class="card"><h3>💬 Komunitas & Request</h3><p class="mut">Berbagi, bertanya, mengusulkan ide. Upvote terbanyak ditindaklanjuti developer.</p></div>
-<div class="card"><h3>🧰 App Vault</h3><p class="mut">Tools produktivitas ASN yang terus bertambah mengikuti kebutuhanmu.</p></div>
-<div class="card"><h3>🌐 Profil Portofolio</h3><p class="mut">Setiap anggota mendapat halaman profil web pribadi di <code>/u/namamu</code>.</p></div></div></section>
+<section class="band"><div class="in"><div class="sec-h"><span class="eyebrow">Contoh cara kerja</span><h2>Dari coretan kasar jadi dokumen rapi</h2><p>Pilih contoh di bawah. Ini simulasi tampilan dengan contoh tetap. Di App Vault, kamu menulis catatanmu sendiri.</p></div>
+<div class="chips" style="justify-content:center"><button class="on" data-sim="a">📄 Nota Dinas</button><button data-sim="b">📝 Laporan Harian</button></div>
+<div class="sim"><div class="pane"><b class="small">✍ Catatan kasar</b><div class="raw" id="sim-raw" style="margin-top:8px"></div></div>
+<div class="pane"><b class="small">📑 Draf dokumen</b><div class="paper" id="sim-out" style="margin-top:8px"></div></div></div>
+<p class="small mut" style="text-align:center;margin-top:12px">Hasil selalu berupa draf. Tinjau dan sesuaikan sebelum diserahkan.</p></div></section>
 
-<section id="harga"><h2>Harga jujur, manfaat langsung terasa</h2>
-<p class="mut">Harga normal Rp{{ site.harga_normal | divided_by: 1000 }}.000, promo November Rp{{ site.harga_promo | divided_by: 1000 }}.000, dan 100 pendaftar pertama hanya Rp{{ site.harga_early | divided_by: 1000 }}.000.</p>
-<div class="grid g3" style="margin-top:16px">
-<div class="card price"><span class="pill">GRATIS</span><div class="big">Rp0</div><ul><li>Lihat feed komunitas</li><li>1× coba AI e-Kin</li></ul><a class="btn gh" href="/komunitas/">Coba Gratis</a></div>
-<div class="card price"><span class="pill">PROMO NOVEMBER</span><div class="big">Rp49.000<small>/bln</small></div><s>Rp89.000/bulan</s><ul><li>Akses penuh semua tools</li><li>Voting dan request tanpa batas</li></ul><button class="btn" data-act="49">Pilih Promo</button></div>
-<div class="card price hot lv2"><span class="pill eb">🔥 EARLY BIRD 100 PERTAMA</span><div class="big">Rp25.000<small>/bln</small></div>
-<div class="small"><b data-slot>{{ slot }}</b> slot tersisa</div><div class="bar2"><i data-fill style="width:{{ site.early_taken }}%"></i></div>
-<ul><li>Semua fitur Premium</li><li>Harga terkunci selama langganan aktif</li></ul><button class="btn amb" data-act="25">🚀 Amankan Slot Sekarang</button></div></div>
-<div class="card sc" style="margin-top:16px"><table><tr><th>Fitur</th><th>Gratis</th><th>Premium</th></tr><tr><td>Feed dan diskusi</td><td>Lihat</td><td>Posting, vote, request</td></tr><tr><td>AI e-Kin + PDF</td><td>1× coba</td><td>Kuota bulanan</td></tr><tr><td>Aksi Perubahan, Multiframe, Reminder</td><td>–</td><td>✔</td></tr><tr><td>Profil portofolio</td><td>–</td><td>✔</td></tr></table></div>
-<p class="small mut">🔒 Batalkan langganan kapan saja. Investasi kecil untuk membebaskan jam lembur setiap bulan.</p></section>
+<section><div class="sec-h"><span class="eyebrow blue">Satu langganan, banyak solusi</span><h2>Lebih dari sekadar kumpulan tools</h2></div>
+<div class="grid g3 feat">
+<div class="card"><div class="em">💬</div><h3>Komunitas &amp; Request</h3><p class="mut">Berbagi, bertanya, dan mengusulkan ide. Dukungan terbanyak ditindaklanjuti developer.</p></div>
+<div class="card"><div class="em">🧰</div><h3>App Vault</h3><p class="mut">Tools produktivitas yang terus bertambah mengikuti kebutuhan ASN.</p></div>
+<div class="card"><div class="em">🌐</div><h3>Profil Portofolio</h3><p class="mut">Halaman profil publikmu di <code>/u/namamu</code>, dibangun dengan Jekyll.</p></div>
+<div class="card"><div class="em">📚</div><h3>Blog Jawaban</h3><p class="mut">Pertanyaan yang sering muncul dijawab menjadi artikel panduan.</p></div>
+<div class="card"><div class="em">🔒</div><h3>Data di Perangkat</h3><p class="mut">Draf kerjamu tersimpan lokal di browser, bukan di server kami.</p></div>
+<div class="card"><div class="em">🎁</div><h3>Poin dari Kode Unik</h3><p class="mut">Kelebihan nominal pembayaran kembali jadi poin untuk potongan berikutnya.</p></div></div></section>
+
+<section><div class="row" style="justify-content:space-between;align-items:flex-end;margin-bottom:14px"><div><span class="eyebrow">Gotong royong birokrasi</span><h2 style="margin-top:10px">Punya masalah administrasi yang spesifik?</h2><p class="mut" style="margin:6px 0 0">Usulkan di Komunitas. Request dengan dukungan terbanyak diprioritaskan.</p></div><a class="btn" href="/komunitas/#request">＋ Ajukan Ide</a></div>
+<div class="grid g3"><div class="col"><b>📌 Akan Dikerjakan</b>{% for i in site.data.roadmap.todo %}<div class="card">{{ i }}</div>{% endfor %}</div>
+<div class="col"><b>🔧 Sedang Dikerjakan</b>{% for i in site.data.roadmap.prog %}<div class="card">{{ i }}</div>{% endfor %}</div>
+<div class="col"><b>✅ Selesai</b>{% for i in site.data.roadmap.done %}<div class="card">{{ i }}</div>{% endfor %}</div></div></section>
+
+<section><div class="sec-h"><span class="eyebrow amb">Mulai dalam 4 langkah</span><h2>Dari daftar sampai Premium aktif</h2></div>
+<div class="grid g2" style="max-width:900px;margin:0 auto">
+<div class="step"><span class="n">1</span><div><h3>Buat akun</h3><p class="mut" style="margin:0">Daftar gratis di Komunitas dengan username dan kata sandi.</p></div></div>
+<div class="step"><span class="n">2</span><div><h3>Buat tagihan</h3><p class="mut" style="margin:0">Pilih Aktivasi Premium, isi data, dapatkan kode tagihan dan QRIS.</p></div></div>
+<div class="step"><span class="n">3</span><div><h3>Bayar dengan QRIS</h3><p class="mut" style="margin:0">Scan dengan e-wallet atau m-banking, lalu tekan Saya sudah bayar.</p></div></div>
+<div class="step"><span class="n">4</span><div><h3>Diverifikasi, Premium aktif</h3><p class="mut" style="margin:0">Admin mencocokkan pembayaran. Akunmu aktif dan poin masuk otomatis.</p></div></div></div></section>
+
+<section><div class="row" style="justify-content:space-between;align-items:flex-end;margin-bottom:14px"><h2>Intip App Vault</h2><a class="btn gh sm" href="/vault/">Lihat semua</a></div>
+<div class="grid g4">{% for t in site.data.tools limit:4 %}<a class="card tile" href="{{ t.url }}" {% if t.premium %}data-premium{% endif %}><div class="top"><div class="em">{{ t.icon }}</div><span class="st {{ t.status }}">{{ t.status }}</span></div><h3>{{ t.title }}</h3><p class="small mut">{{ t.desc }}</p></a>{% endfor %}</div></section>
+
+<section id="harga"><div class="sec-h"><span class="eyebrow amb">Harga jujur</span><h2>Manfaat langsung terasa</h2><p>Mulai gratis, upgrade saat kamu siap.</p></div>{% include pricing.html %}
+<p style="text-align:center;margin-top:14px"><a href="/harga/" class="btn gh sm">Bandingkan paket lengkap →</a></p></section>
+
+<section><div class="sec-h"><span class="eyebrow blue">Pertanyaan umum</span><h2>Sebelum kamu mulai</h2></div><div style="max-width:780px;margin:0 auto">{% include faq.html limit=5 %}<p style="text-align:center"><a href="/bantuan/">Lihat semua pertanyaan →</a></p></div></section>
+
+<div class="cta-band"><h2>Waktunya berhenti lembur karena administrasi</h2><p>Bergabung dengan komunitas ASN yang saling membantu bekerja lebih cerdas.</p><div class="row" style="justify-content:center"><a class="btn amb" href="/harga/">Lihat Harga &amp; Aktivasi</a><a class="btn" style="background:#fff;color:#1e3a8a" href="/komunitas/">Coba Komunitas Gratis</a></div></div>

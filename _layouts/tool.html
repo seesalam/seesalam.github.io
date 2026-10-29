@@ -1,0 +1,14 @@
+---
+layout: default
+---
+{% assign t = site.data.tools | where: "id", page.tool | first %}
+<section class="view"><a href="/vault/" class="small">← Kembali ke App Vault</a>
+<div class="tool-hero" style="margin-top:10px"><span class="st {{ t.status }}">{% if t.status == 'segera' %}Segera hadir{% elsif t.status == 'tersedia' %}Tersedia{% else %}Usulan{% endif %}</span>
+<h1 style="margin-top:10px">{{ t.icon }} {{ t.title }}</h1><p>{{ t.desc }}</p></div>
+<div class="grid g2" style="margin-top:16px;align-items:start">
+<div class="card"><h3>Yang akan dikerjakan tool ini</h3><ul class="ticks" style="margin-top:8px">{% for b in page.bullets %}<li>{{ b }}</li>{% endfor %}</ul></div>
+<div class="card lv2"><h3>Status pengembangan</h3><p class="mut">Tool ini belum dirilis. Urutan pengerjaan mengikuti dukungan terbanyak di Komunitas, jadi suaramu menentukan.</p>
+<div class="row" style="margin-top:10px"><a class="btn amb" href="/komunitas/#request">👍 Dukung di Request Aplikasi</a><a class="btn gh" href="/harga/">Lihat paket Premium</a></div>
+<p class="small mut" style="margin-top:12px">Saat dirilis, tool ini terbuka untuk anggota Premium. Tidak ada tanggal rilis yang dijanjikan.</p></div></div>
+<h3 style="margin:28px 0 12px">Tools lain</h3>
+<div class="grid g3">{% for o in site.data.tools %}{% if o.id != t.id and o.status != 'request' %}{% if forloop.index <= 4 %}<a class="card tile" href="{{ o.url }}" {% if o.premium %}data-premium{% endif %}><div class="top"><div class="em">{{ o.icon }}</div><span class="st {{ o.status }}">{{ o.status }}</span></div><h3>{{ o.title }}</h3><p class="small mut">{{ o.desc }}</p></a>{% endif %}{% endif %}{% endfor %}</div></section>

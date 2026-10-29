@@ -2,12 +2,14 @@
 layout: default
 ---
 <section class="view">
-<div class="card lv2 prof">
-<div class="av">{{ page.title | slice: 0, 1 }}</div>
-<div><h1>{{ page.title }}</h1><p class="mut">{{ page.jabatan }} · {{ page.instansi }}</p>
-<p>{{ page.bio }}</p>
-{% for b in page.badges %}<span class="pill ok">🏅 {{ b }}</span> {% endfor %}</div></div>
-<h2 style="margin-top:28px">Portofolio</h2>
-<div class="grid g2" style="margin-top:12px">{% for p in page.portofolio %}<div class="card"><h3>{{ p.judul }}</h3><p class="mut small">Tahun {{ p.tahun }}</p></div>{% endfor %}</div>
-<p class="small mut" style="margin-top:20px">Halaman profil ini dibuat otomatis oleh Jekyll dari berkas di folder <code>_profiles</code>.</p>
+<div class="pp-hero prof"><div class="av">{{ page.title | slice: 0, 1 }}</div>
+<div style="flex:1"><h1 style="font-size:28px">{{ page.title }}</h1><p>{{ page.jabatan }} · {{ page.instansi }}</p>
+<div>{% for b in page.badges %}<span class="pill ok">🏅 {{ b }}</span> {% endfor %}</div></div>
+<div class="share"><button class="btn sm" style="background:#fff;color:#1e3a8a" data-copy>🔗 Salin tautan</button></div></div>
+<div class="grid g2" style="margin-top:16px;align-items:start">
+<div class="card"><h3>Tentang</h3><p class="mut">{{ page.bio }}</p></div>
+<div class="card"><h3>Ringkasan</h3><div class="kpi" style="grid-template-columns:repeat(2,1fr);margin-top:8px"><div class="card" style="padding:12px"><b>{{ page.portofolio | size }}</b><span class="small mut">Karya &amp; capaian</span></div><div class="card" style="padding:12px"><b>{{ page.badges | size }}</b><span class="small mut">Lencana</span></div></div></div></div>
+<h2 style="margin:28px 0 12px;font-size:22px">Portofolio</h2>
+<div class="tl">{% for p in page.portofolio %}<div><b>{{ p.judul }}</b><br><span class="small mut">Tahun {{ p.tahun }}</span></div>{% endfor %}</div>
+<p class="small mut" style="margin-top:20px">Halaman ini dibuat otomatis oleh Jekyll dari berkas di folder <code>_profiles</code>. Isi dikirim dan disetujui anggota yang bersangkutan.</p>
 </section>

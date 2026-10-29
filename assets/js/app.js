@@ -29,7 +29,7 @@ function paint(){
  $$('[data-status]').forEach(e=>e.innerHTML=S.premium?'<span class="pill ok">✔ PREMIUM AKTIF</span> <span class="pill eb">🏅 ASN PELOPOR</span>':'<span class="pill">GRATIS</span>');
  $$('[data-hide-premium]').forEach(e=>e.hidden=S.premium);
  $$('[data-premium]').forEach(e=>e.classList.toggle('locked',!S.premium));
- const sl=Math.max(0,A.total-S.taken);$$('[data-slot]').forEach(e=>e.textContent=sl);$$('[data-fill]').forEach(e=>e.style.width=(S.taken/A.total*100)+'%');
+ const sl=Math.max(0,A.total-A.taken);$$('[data-slot]').forEach(e=>e.textContent=sl);$$('[data-fill]').forEach(e=>e.style.width=(A.taken/A.total*100)+'%');
  $$('[data-kuota]').forEach(e=>e.textContent=S.kuota);$$('[data-kbar]').forEach(e=>e.style.width=Math.min(100,S.kuota*10)+'%');
  $('#sticky').hidden=S.premium;
  const dl=$('[data-deadline]');if(dl){const d=new Date(new Date().getFullYear(),new Date().getMonth()+1,0);dl.textContent=d.toLocaleDateString('id-ID',{day:'numeric',month:'long',year:'numeric'})}}
@@ -56,8 +56,6 @@ const bk=$('#bkp');if(bk){bk.onclick=async()=>{const b=new Blob([JSON.stringify(
 /* Kunci otomatis */
 let idle;const bump=()=>{clearTimeout(idle);if(S.pin)idle=setTimeout(()=>{$('#sheet').innerHTML='<h3>🔐 Sesi terkunci</h3><input id="lp" inputmode="numeric" maxlength="4" placeholder="Masukkan PIN"><button class="btn" id="ul" style="margin-top:12px">Buka</button>';$('#mod').classList.add('open');$('#ul').onclick=()=>$('#lp').value===S.pin?closeM():toast('PIN salah')},18e4)};
 ['click','keydown','touchstart'].forEach(e=>addEventListener(e,bump,{passive:true}));
-/* Mengetik demo & penghitung */
-const ty=$('#ty');if(ty){const t='rapat koordinasi, rekap data layanan, input surat masuk';let i=0;setInterval(()=>{ty.textContent=t.slice(0,i++%(t.length+12))},90);setInterval(()=>{$('#onl').textContent=120+Math.floor(Math.random()*30)},4000)}
 get('state').then(async s=>{if(s)S={...S,...s};const was=S.premium;S.premium=false;
 let U0=null;try{U0=JSON.parse(localStorage.asn_user||'null')}catch(e){}
 if(!U0){try{localStorage.removeItem('asn_pay');localStorage.removeItem('asn_tok')}catch(e){}S.nama='';S.instansi='';S.nip='';S.pin=''}
